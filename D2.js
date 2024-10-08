@@ -79,21 +79,44 @@ if (totalWhitSale > 50) {
   Alla fine mostra il risultato in console.
 */
 
-let a = 35;
+let a = 350;
 let b = 174;
 let c = 98;
-if (a > b && a > c && b < a && b > c && c < a && c < b) {
-  console.log(`L'ordine dei numeri secondo il loro valore è:  ${a}, ${b}, ${c}`);
+let maggiore = "";
+let minore = "";
+let intermedio = "";
+
+if (a > b && a > c) {
+  maggiore = a;
+  if (b > c) {
+    minore = c;
+    intermedio = b;
+  } else {
+    minore = b;
+    intermedio = c;
+  }
 }
-if (b > a && b > c && a < b && a > c && c < b && c < a) {
-  console.log(`L'ordine dei numeri secondo il loro valore è: ${b}, ${a}, ${c} `);
+if (b > a && b > c) {
+  maggiore = b;
+  if (a > c) {
+    intermedio = a;
+    minore = c;
+  } else {
+    minore = a;
+    intermedio = c;
+  }
 }
-if (c > a && c > b && a < c && b > a && a < c && a < b) {
-  console.log(`L'ordine dei numeri secondo il loro valore è: ${c}, ${b}, ${a} `);
+if (c > a && c > b) {
+  maggiore = c;
+  if (b > a) {
+    intermedio = b;
+    minore = a;
+  } else {
+    minore = b;
+    intermedio = a;
+  }
 }
-if (b > a && b > c && a < c && b > a && a < c && a < b) {
-  console.log(`L'ordine dei numeri secondo il loro valore è: ${b}, ${c}, ${a} `);
-}
+console.log("L ordine dei numeri secondo il valore è:" + maggiore + ", " + intermedio + ", " + minore);
 
 /* ESERCIZIO 8
   Crea un algoritmo per verificare che un valore fornito sia un numero oppure no (suggerimento: cerca su un motore di ricerca "typeof").
